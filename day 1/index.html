@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic React</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .person {
+        display: inline-block;
+        margin: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;
+        width: 200px;
+        padding: 20px;
+      }
+    </style>
+
+    <script
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      function Person(props) {
+        return (
+          <div className="person">
+            <h1>{props.name}</h1>
+            <p>Age : {props.age} </p>
+          </div>
+        );
+      }
+
+      let app = (
+        <div>
+          <Person name="Tuhin" age="100" />
+          <Person name="Ben" age="100" />
+          <Person name="Test" age="Test Age" />
+          <Person name="React is Awesome" age="React is Good" />
+        </div>
+      );
+
+      ReactDOM.render(app, document.querySelector("#app"));
+    </script>
+  </body>
+</html>
