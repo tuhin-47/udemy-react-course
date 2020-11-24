@@ -4,3 +4,10 @@
   padding: 0.125rem;
   font-weight: 500;
 }
+
+.UserInput {
+  display: block;
+  border: 2px solid rgb(173, 146, 238);
+  padding: 0.5rem;
+  margin: 1rem;
+}
