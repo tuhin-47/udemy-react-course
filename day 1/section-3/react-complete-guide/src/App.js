@@ -48,14 +48,68 @@ class App extends Component {
       ]
     })
   }
+  
+  changeHandlerFirst = (event) =>{
+    this.setState({
+      persons:[
+        {
+          name : event.target.value,
+          age: 27
+        },
+        {
+          name : this.state.persons[1].name,
+          age: this.state.persons[1].age
+        },
+        {
+          name : this.state.persons[2].name,
+          age: this.state.persons[2].age
+        },
+        {
+          name : this.state.persons[3].name,
+          age: this.state.persons[3].age
+        }
+       
+        ]
+      }
+        );
+      }
+
+
+      changeHandlerSecond = (event) =>{
+        this.setState({
+          persons:[
+            {
+              name : this.state.persons[0].name,
+              age: 27
+            },
+            {
+              name : event.target.value,
+              age: this.state.persons[1].age
+            },
+            {
+              name : this.state.persons[2].name,
+              age: this.state.persons[2].age
+            },
+            {
+              name : this.state.persons[3].name,
+              age: this.state.persons[3].age
+            }
+           
+            ]
+          }
+            );
+          }
+
   render() {
     return (
       <div className="App">
         <h1> React is Working :-) !!!</h1>
         <p> I am a p 'tag' inside component. </p>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} updateChange={this.changeHandlerFirst}/>
         <button onClick={this.buttonClickHandler.bind(this,'Hasan Mahmud Tuhin')}> Change Something </button>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.buttonClickHandler.bind(this,'Tuhin')}> Ben brought me this course! Thanks to him.</Person>
+
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.buttonClickHandler.bind(this,'Tuhin')} updateChange = {this.changeHandlerSecond}> Ben brought me this course! Thanks to him.</Person>
+
         <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
         <Person name={this.state.persons[3].name} age={this.state.persons[3].age}/>
       </div>
