@@ -104,14 +104,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1> React is Working :-) !!!</h1>
-        <p> I am a p 'tag' inside component. </p>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} updateChange={this.changeHandlerFirst}/>
+        <p> I am a StateFull Component </p>
         <button onClick={this.buttonClickHandler.bind(this,'Hasan Mahmud Tuhin')}> Change Something </button>
+        
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} updateChange={this.changeHandlerFirst}/>
 
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age} click={this.buttonClickHandler.bind(this,'Tuhin')} updateChange = {this.changeHandlerSecond}> Ben brought me this course! Thanks to him.</Person>
 
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
-        <Person name={this.state.persons[3].name} age={this.state.persons[3].age}/>
+       
       </div>
     );
   }
